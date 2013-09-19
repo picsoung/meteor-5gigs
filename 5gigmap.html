@@ -1,0 +1,30 @@
+<head>
+  <title>5gigmap</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+</head>
+
+<body>
+  <h1>Visualize concerts on a map</h1>
+  {{> searchForm}}
+  <br/>
+  {{> eventsMap}}
+</body>
+
+<template name="searchForm">
+  <form class="pure-form">
+    <fieldset>
+        <legend>A compact inline form</legend>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <label for="remember">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+</template>
+
+<template name="eventsMap">
+	
+</template>
