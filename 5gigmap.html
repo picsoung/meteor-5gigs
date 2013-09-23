@@ -1,30 +1,62 @@
 <head>
   <title>5gigmap</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+  <style>
+    .map {
+      height: 500px;
+      width: auto; 
+      border: solid 1px black;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Visualize concerts on a map</h1>
-  {{> searchForm}}
-  <br/>
-  {{> eventsMap}}
+  <div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-2">
+      <h1>Visualize concerts on a map</h1>
+      {{> searchForm}}
+      <br/>
+      {{> eventsMap}}
+      {{> maptemplate}}
+    </div>
+    <div class="pure-u-1-2"></div>
+  </div>
 </body>
 
 <template name="searchForm">
-  <form class="pure-form">
+  <div class="pure-form">
     <fieldset>
         <legend>A compact inline form</legend>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-
-        <label for="remember">
-            <input id="remember" type="checkbox"> Remember me
-        </label>
-        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+        <input type="text" id="cityName" placeholder="City name">
+        <select id="country">
+            <option value="be">Belgium</option>
+            <option value="fr">France</option>
+            <option value="gb">United Kingdom</option>
+            <option value="us">United Stated</option>
+            <option value="es">Spain</option>
+        </select>
+        <button type="submit" id="searchButton" class="pure-button pure-button-primary">Search</button>
     </fieldset>
-</form>
+  </div>
 </template>
 
 <template name="eventsMap">
-	
+	<h3>Results for {{city}}</h3>
+    {{#each concerts}}
+      {{> concert}}<br/>
+    {{/each}}
+</template>
+
+<template name="maptemplate">
+  {{#constant}}
+    <div id = "container">
+      <div id="map" class="map"></div>
+    </div>
+  {{/constant}} 
+</template>
+
+<template name="concert">
+  <a href="{{url}}">{{name}}</a> on {{prettifyDate startDate}} - <b id="seemap">see on Map</b>
 </template>
