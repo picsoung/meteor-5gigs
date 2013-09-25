@@ -18,13 +18,11 @@ if (Meteor.isServer) {
 			}
 	  	},
 
-	  	getGeoCoordinates: function(city){
-	  		var request_uri = "http://beta.geocoding.cloudmade.com/v3/"+cloudmadeKey+"/api/geo.location.search.2?format=json&source=OSM&enc=UTF-8&limit=1&q="+city+"&token=96f4ae8a17f5435ca8adcc322e29058d";
-	  		console.log(request_uri);
+	  	getGeoCoordinates: function(city,country){
+	  		var request_uri = "http://beta.geocoding.cloudmade.com/v3/"+cloudmadeKey+"/api/geo.location.search.2?format=json&source=OSM&enc=UTF-8&limit=1&q=[country="+country+"]%20"+city+"&token=96f4ae8a17f5435ca8adcc322e29058d";
 	  		var result = HTTP.call("GET",request_uri);
 
-	  		console.log(result);
-			if (result.statusCode === 200) {
+	  		if (result.statusCode === 200) {
 			  var respJson = JSON.parse(result.content);
 			  var place = respJson.places[0];
 			  return place.position

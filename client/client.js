@@ -7,16 +7,20 @@ if (Meteor.isClient) {
         if(err)
           return err;
 
-        data.forEach(function (concert) {
-          var marker = L.marker([concert.venue.location.latitude, concert.venue.location.longitude]).addTo(map);
-          marker.bindPopup("<b><a href='"+concert.url+"'>"+concert.name+"</a></b><br><b>Date </b>"+concert.startDate);
-        });
+        if(data != "The city you requested doesn't exist"){
+          data.forEach(function (concert) {
+            var marker = L.marker([concert.venue.location.latitude, concert.venue.location.longitude]).addTo(map);
+            marker.bindPopup("<b><a href='"+concert.url+"'>"+concert.name+"</a></b><br><b>Date </b>"+concert.startDate);
+          });
 
-        Session.set('city', $("#cityName").val());
-        Session.set('concerts',data);
+          Session.set('city', $("#cityName").val());
+          Session.set('concerts',data);
+        }else{
+          FlashMessages.sendError("City doesn't exist or was not found on 5gig, try local spelling",{ hideDelay: 4000 });
+        }
       });
 
-      Meteor.call('getGeoCoordinates',$("#cityName").val(),function(err,data){
+      Meteor.call('getGeoCoordinates',$("#cityName").val(),$('#country :selected').text(),function(err,data){
         if(err)
           return err
 

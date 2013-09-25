@@ -8,6 +8,13 @@
       width: auto; 
       border: solid 1px black;
     }
+    .error {
+      color: #D8000C;
+      background-color: #FFBABA;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+    }
   </style>
 </head>
 
@@ -17,6 +24,7 @@
     <div class="pure-u-1-2">
       <h1>Visualize concerts on a map</h1>
       {{> searchForm}}
+      <div class="error">{{> flashMessages}}</div>
       <br/>
       {{> eventsMap}}
       {{> maptemplate}}
@@ -32,9 +40,9 @@
         <input type="text" id="cityName" placeholder="City name">
         <select id="country">
             <option value="be">Belgium</option>
-            <option value="fr">France</option>
+            <option value="fr" >France</option>
             <option value="gb">United Kingdom</option>
-            <option value="us">United Stated</option>
+            <option value="us">United States</option>
             <option value="es">Spain</option>
         </select>
         <button type="submit" id="searchButton" class="pure-button pure-button-primary">Search</button>

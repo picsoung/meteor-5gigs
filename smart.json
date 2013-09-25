@@ -1,6 +1,7 @@
 {
   "packages": {
     "leaflet": {},
-    "moment": {}
+    "moment": {},
+    "flash-messages": {}
   }
 }

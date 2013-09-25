@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "leaflet": {},
-      "moment": {}
+      "moment": {},
+      "flash-messages": {}
     },
     "packages": {
       "leaflet": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.2.1",
         "commit": "9ee12e714afe56b189f53076447b7b54f3012065"
+      },
+      "flash-messages": {
+        "git": "https://github.com/camilosw/flash-messages.git",
+        "tag": "v0.2.1",
+        "commit": "62cf1ee531684808b91dbe3ff15e63f6d5af1c66"
       }
     }
   }
