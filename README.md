@@ -15,6 +15,7 @@ Example project of [5gig](http://www.5gig.com) API in meteor.
 * [meteor](http://meteor.com)
 * [leaflet](http://leafletjs.com/)
 * [moment js](https://momentjs.com)
+* [flash messages](https://github.com/camilosw/flash-messages)
 
 ## Usage
 
