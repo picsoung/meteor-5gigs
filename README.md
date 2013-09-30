@@ -9,6 +9,14 @@ Example project of [5gig](http://www.5gig.com) API in meteor.
 
 [Full 5gig API doc](http:/www.5gig.com/api/)
 
+## What it does
+
+Search for concerts in the city of your choice using 5gig's database.
+
+## Demo
+
+5gigmap.meteor.com
+
 ## Dependencies
 
 * npm
@@ -24,10 +32,6 @@ Example project of [5gig](http://www.5gig.com) API in meteor.
    ```
     meteor --settings settings.json
    ```
-
-## What it does
-
-Search for concerts on 5gig depending on a city name.
 
 1. Write city name
 2. Select country
