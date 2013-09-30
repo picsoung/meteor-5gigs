@@ -15,7 +15,7 @@ Search for concerts in the city of your choice using 5gig's database.
 
 ## Demo
 
-5gigmap.meteor.com
+[5gigmap.meteor.com](http://5gigmap.meteor.com)
 
 ## Dependencies
 
